@@ -1,0 +1,14 @@
+.header-nav {
+	margin-bottom: 2rem;
+	.navbar-nav .nav-link {
+		font-size: 1.2rem;
+		&.active {
+			font-weight: 500;
+		}
+	}
+}
+
+.app-logo {
+	max-height: 4.5rem;
+	max-width: 50%;
+}

@@ -1,39 +1,72 @@
 {
-  "name": "lost-lake-2020",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "@types/jest": "^24.9.1",
-    "@types/node": "^12.12.50",
-    "@types/react": "^16.9.43",
-    "@types/react-dom": "^16.9.8",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1",
-    "typescript": "^3.7.5"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+	"name": "lost-lake-2020",
+	"version": "0.1.0",
+	"private": true,
+	"dependencies": {
+		"bootstrap": "^4.5.0",
+		"framer-motion": "^2.1.2",
+		"react": "^16.13.1",
+		"react-bootstrap": "^1.2.2",
+		"react-dom": "^16.13.1",
+		"react-feather": "^2.0.8",
+		"react-responsive-carousel": "^3.2.9",
+		"react-router-dom": "^5.2.0",
+		"react-scripts": "3.4.1",
+		"typescript": "^3.8.0"
+	},
+	"devDependencies": {
+		"@testing-library/jest-dom": "^4.2.4",
+		"@testing-library/react": "^9.5.0",
+		"@testing-library/user-event": "^7.2.1",
+		"@types/jest": "^24.9.1",
+		"@types/node": "^12.12.50",
+		"@types/react": "^16.9.43",
+		"@types/react-dom": "^16.9.8",
+		"@types/react-router-dom": "^5.1.5",
+		"husky": "^4.2.5",
+		"lint-staged": "^10.2.11",
+		"node-sass": "^4.14.1",
+		"prettier": "^2.0.5"
+	},
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject",
+		"lint": "eslint ./src --ext .ts,.tsx",
+		"prettier": "prettier \"**/*.{json,md,scss,ts,tsx}\" --write"
+	},
+	"eslintConfig": {
+		"extends": "react-app"
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		],
+		"husky": {
+			"hooks": {
+				"pre-commit": "npm run lint && lint-staged",
+				"pre-push": "npm run build"
+			}
+		},
+		"lint-staged": {
+			"src/**/*.{js.jsx,ts,tsx,json,css,scss,md}": [
+				"prettier --write"
+			]
+		},
+		"prettier": {
+			"useTabs": true,
+			"tabWidth": 2,
+			"singleQuote": true,
+			"jsxBracketSameLine": true,
+			"printWidth": 140
+		}
+	}
 }
